@@ -7,19 +7,92 @@ const tokens = {
     token: 'editor-token'
   }
 }
+const remoteRoutes = [
+  {
+    path: '/',
+    children: [{
+      path: 'dashboard',
+    }]
+  },
 
+  {
+    path: '/example',
+    children: [
+      {
+        path: 'table',
+      },
+      {
+        path: 'tree',
+      }
+    ]
+  },
+
+  {
+    path: '/form',
+    children: [
+      {
+        path: 'index',
+      }
+    ]
+  },
+
+  {
+    path: '/nested',
+    children: [
+      {
+        path: 'menu1',
+        children: [
+          {
+            path: 'menu1-1',
+          },
+          {
+            path: 'menu1-2',
+            children: [
+              {
+                path: 'menu1-2-1'
+              },
+              {
+                path: 'menu1-2-2'
+              }
+            ]
+          },
+          {
+            path: 'menu1-3',
+          }
+        ]
+      },
+      {
+        path: 'menu2'
+      }
+    ]
+  },
+
+  {
+    path: 'external-link',
+    children: [
+      {
+        path: 'https://panjiachen.github.io/vue-element-admin-site/#/'
+      }
+    ]
+  },
+
+  // 404 page must be placed at the end !!!
+  { path: '*', redirect: '/404', hidden: true }
+]
 const users = {
   'admin-token': {
     roles: ['admin'],
     introduction: 'I am a super administrator',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    name: 'Super Admin'
+    name: 'Super Admin',
+    routes: remoteRoutes
   },
   'editor-token': {
     roles: ['editor'],
     introduction: 'I am an editor',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    name: 'Normal Editor'
+    name: 'Normal Editor',
+    routes: remoteRoutes
   }
 }
 

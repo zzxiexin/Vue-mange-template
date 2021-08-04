@@ -1,13 +1,17 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
+import router from '@/router'
+import GenerateRoutes from '@/router/generateRoute'
+import asyncRoutes from '@/router/async.routes'
 
 const getDefaultState = () => {
   return {
     token: getToken(),
     name: '',
     avatar: '',
-    roles: []
+    roles: [],
+    routes: []
   }
 }
 
@@ -28,6 +32,9 @@ const mutations = {
   },
   SET_ROLES: (state, roles) => {
     state.roles = roles
+  },
+  SET_ROUTES: (state, routes) => {
+    state.routes = routes
   }
 }
 
@@ -55,10 +62,12 @@ const actions = {
         if (!data) {
           return reject('Verification failed, please Login again.')
         }
-        const { name, avatar, roles } = data
+        const { name, avatar, roles, routes } = data
         commit('SET_ROLES', roles)
         commit('SET_NAME', name)
         commit('SET_AVATAR', avatar)
+        commit('SET_ROUTES', GenerateRoutes(asyncRoutes, routes))
+        console.log(GenerateRoutes(asyncRoutes, routes))
         resolve(data)
       }).catch(error => {
         reject(error)
