@@ -1,5 +1,9 @@
 <template>
   <div class="app-container">
+    <button v-permission="['editor']">editor权限测试</button><br>
+    <button v-permission="['admin']">amdin权限测试</button>
+    <br>
+    <span>过滤器测试:{{ 'xinxin' | uppercaseFirst }}</span>
     <el-table
       v-loading="listLoading"
       :data="list"
