@@ -36,45 +36,45 @@ const remoteRoutes = [
     ]
   },
 
-  {
-    path: '/nested',
-    children: [
-      {
-        path: 'menu1',
-        children: [
-          {
-            path: 'menu1-1',
-          },
-          {
-            path: 'menu1-2',
-            children: [
-              {
-                path: 'menu1-2-1'
-              },
-              {
-                path: 'menu1-2-2'
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-          }
-        ]
-      },
-      {
-        path: 'menu2'
-      }
-    ]
-  },
+  // {
+  //   path: '/nested',
+  //   children: [
+  //     {
+  //       path: 'menu1',
+  //       children: [
+  //         {
+  //           path: 'menu1-1',
+  //         },
+  //         {
+  //           path: 'menu1-2',
+  //           children: [
+  //             {
+  //               path: 'menu1-2-1'
+  //             },
+  //             {
+  //               path: 'menu1-2-2'
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           path: 'menu1-3',
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       path: 'menu2'
+  //     }
+  //   ]
+  // },
 
-  {
-    path: 'external-link',
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/'
-      }
-    ]
-  },
+  // {
+  //   path: 'external-link',
+  //   children: [
+  //     {
+  //       path: 'https://panjiachen.github.io/vue-element-admin-site/#/'
+  //     }
+  //   ]
+  // },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
