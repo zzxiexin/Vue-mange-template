@@ -16,10 +16,10 @@
               Home
             </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-admin-template/">
+          <a target="_blank" href="https://github.com/zzxiexin/vue-mange-project">
             <el-dropdown-item>Github</el-dropdown-item>
           </a>
-          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
+          <a target="_blank" href="https://panjiachen.gitee.io/vue-element-admin-site/zh/guide/#%E5%8A%9F%E8%83%BD">
             <el-dropdown-item>Docs</el-dropdown-item>
           </a>
           <el-dropdown-item divided @click.native="logout">
