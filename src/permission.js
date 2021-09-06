@@ -8,7 +8,7 @@ import getPageTitle from '@/utils/get-page-title'
 import GenerateRoutes from '@/router/generateRoute'
 import asyncRoutes from '@/router/async.routes'
 // 是否从后端接口获取路由
-const isGetRoutesFromApi = true
+export const isGetRoutesFromApi = false
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 const whiteList = ['/login'] // no redirect whitelist

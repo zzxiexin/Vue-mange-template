@@ -1,9 +1,9 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
-import router from '@/router'
 import GenerateRoutes from '@/router/generateRoute'
 import asyncRoutes from '@/router/async.routes'
+import { isGetRoutesFromApi } from '@/permission'
 
 const getDefaultState = () => {
   return {
@@ -66,7 +66,7 @@ const actions = {
         commit('SET_ROLES', roles)
         commit('SET_NAME', name)
         commit('SET_AVATAR', avatar)
-        commit('SET_ROUTES', GenerateRoutes(asyncRoutes, routes))
+        commit('SET_ROUTES', isGetRoutesFromApi ? GenerateRoutes(asyncRoutes, routes) : asyncRoutes)
         console.log(GenerateRoutes(asyncRoutes, routes))
         resolve(data)
       }).catch(error => {
